@@ -11,7 +11,7 @@ class AddItem extends Component {
         return (
             //anything that affects the form should be an input tag
             <form onSubmit={event => this.onSubmit(event)}>
-              <input type='text' value={this.state.itemText} onChange={event => this.onInputChange(event.target.value)} />
+              <input type='text' value={this.state.itemText} onChange={event => this.onInputChange(event.target.value)}/>
               <input type='submit' />
             </form>
         )

@@ -8,7 +8,7 @@ class App extends Component {
 
     this.state = {items: []}
     this.updateList = this.updateList.bind(this);
-    this.onDelete = this.onDelete.bind(this);
+    this.deleteItem = this.deleteItem.bind(this);
     // this.removeItem = this.removeItem.bind(this);
   }
 
@@ -19,20 +19,22 @@ class App extends Component {
     this.setState({items: copy})
   }
 
-  onDelete(itemText) {
+  deleteItem(i) {
     const copy = this.state.items
 
     const filteredItems = copy.filter(item => {
-      return itemText !== item
+      console.log('delete item')
+      return copy[i] !== item
     })
     this.setState({items: filteredItems})
   }
+
 
   render() {
     return (
       <div>
         <AddItem updateList={this.updateList}/>
-        <List items={this.state.items} onDelete={this.onDelete}/>
+        <List items={this.state.items} deleteItem={this.deleteItem}/>
       </div>
     );
   }
