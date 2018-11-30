@@ -9,6 +9,7 @@ class App extends Component {
     this.state = {items: []}
     this.updateList = this.updateList.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
+    this.onEditSubmit = this.onEditSubmit.bind(this);
     // this.removeItem = this.removeItem.bind(this);
   }
 
@@ -23,18 +24,24 @@ class App extends Component {
     const copy = this.state.items
 
     const filteredItems = copy.filter(item => {
-      console.log('delete item')
       return copy[i] !== item
     })
     this.setState({items: filteredItems})
+  }
+
+  onEditSubmit(itemText, i) {
+    const copy = this.state.items.slice()
+    copy[i] = itemText;
+    this.setState({items: copy})
   }
 
 
   render() {
     return (
       <div>
+        <h1>Scott's Todo List</h1>
         <AddItem updateList={this.updateList}/>
-        <List items={this.state.items} deleteItem={this.deleteItem}/>
+        <List items={this.state.items} deleteItem={this.deleteItem} onEditSubmit={this.onEditSubmit}/>
       </div>
     );
   }
