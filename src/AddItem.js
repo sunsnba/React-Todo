@@ -22,7 +22,8 @@ class AddItem extends Component {
 
     onSubmit(event) {
         console.log('hi')
-        event.preventDefault()
+        event.preventDefault() 
+        // w/out this event.preventDefault the app will immediately clear the list
         this.props.updateList(this.state.itemText);
         this.setState({itemText: ''});
     }
