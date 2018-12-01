@@ -13,6 +13,7 @@ class AddItem extends Component {
             <form onSubmit={event => this.onSubmit(event)}>
               <input type='text' value={this.state.itemText} onChange={event => this.onInputChange(event.target.value)}/>
               <input type='submit' />
+              <input type='button' value='remove all'  onClick={this.props.removeAll} />
             </form>
         )
     }
@@ -27,6 +28,7 @@ class AddItem extends Component {
         this.props.updateList(this.state.itemText);
         this.setState({itemText: ''});
     }
+
 }
 
 export default AddItem;
