@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import List from './List';
 import AddItem from './AddItem';
+import './App.css';
 
 class App extends Component {
   constructor(props) {
@@ -44,7 +45,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>Scott's Todo List</h1>
+        <h1 className="App-header">Scott's Todo List</h1>
         <AddItem updateList={this.updateList} removeAll={this.removeAll} />
         <List items={this.state.items} deleteItem={this.deleteItem} //onEditSubmit={this.onEditSubmit}
         />
