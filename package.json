@@ -5,7 +5,11 @@
   "dependencies": {
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
-    "react-scripts": "2.1.1"
+    "react-scripts": "2.1.1",
+    "express": "^4.13.4",
+    "mongodb": "^3.0.2",
+    "mongoose": "^5.0.4",
+    "request": "^2.81.0"
   },
   "scripts": {
     "start": "PORT=3007 react-scripts start",
